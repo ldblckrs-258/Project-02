@@ -22,7 +22,7 @@
                         </div>
                         <div class="search-ctn">
                             <div class="search-bar">
-                                <img class="icon-search" src="https://salt.tikicdn.com/ts/upload/33/d0/37/6fef2e788f00a16dc7d5a1dfc5d0e97a.png" alt="icon-search">
+                                <span class="icon-search"> <i class="fa-solid fa-magnifying-glass fa-lg"></i> </span>
                                 <input type="text" data-view-id="main_search_form_input" value="" placeholder="Search here ..." class="search-input">
                                 <button data-view-id="main_search_form_button" class="search-button">Tìm kiếm</button>
                             </div>
@@ -43,7 +43,11 @@
                                 <span class="item-number">0</span>
                             </div>
                             <div class="cart-ctn">
-                                <div class="cart-title">Giỏ hàng</div>
+                                <div class="cart-head">
+                                    <div class="cart-title">Giỏ hàng</div>
+                                    <button class="clear-cart"><i class="fa-solid fa-circle-xmark"></i> Xóa</button>
+                                </div>
+                                
                                 <div class="cart-list">
                                     <div class="cart-item">
                                         <img src="https://vcdn1-sohoa.vnecdn.net/2023/03/01/oppo-find-n2-flip-3-1672606170-1677689178.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=4X6TekqFR3IGZ8YQKYrxIg">
@@ -67,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="cart-footer">
-                                    <button class="go-cart button-17">Mở giỏ hàng</button>
+                                    <button class="go-cart">Mở giỏ hàng</button>
                                 </div>
                                 
                             </div>
@@ -76,6 +80,189 @@
                 </div>
             </div>
         </header>
+        <div class="head-banner">
+            <img class="" src="https://salt.tikicdn.com/ts/upload/5e/ec/fb/150f3c633781ed1da9921e45db90c62d.png" >
+            <a href="">Freeship upto 70% only Today !!</a>
+        </div>
+        <div class="main-container">
+            <div class="side-bar">
+                <div class="side__title">Category</div>
+                <div class="side__item greybtn">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/847/343/original/isolated-blue-front-sweater-free-png.png" alt="">
+                    <span>Clothes</span>
+                </div>
+                <div class="side__item greybtn">
+                    <img src="https://www.freeiconspng.com/thumbs/bag-png/clothing-bag-png-1.png" alt="">
+                    <span>Bags</span>
+                </div>
+                <div class="side__item greybtn">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/847/343/original/isolated-blue-front-sweater-free-png.png" alt="">
+                    <span>Clothes</span>
+                </div>
+                <div class="side__item greybtn">
+                    <img src="https://www.freeiconspng.com/thumbs/bag-png/clothing-bag-png-1.png" alt="">
+                    <span>Bags</span>
+                </div>
+                <div class="side__item greybtn">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/847/343/original/isolated-blue-front-sweater-free-png.png" alt="">
+                    <span>Clothes</span>
+                </div>
+                <div class="side__item greybtn">
+                    <img src="https://www.freeiconspng.com/thumbs/bag-png/clothing-bag-png-1.png" alt="">
+                    <span>Bags</span>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="wrapper">
+                    <!-- Images Area -->
+                    <div class="images-area">
+                        <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/48/18/5c/490007591389bfb83e612e8b9be7c885.png.webp" alt="image" class="firstImage">
+                        <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/cc/d2/13/d6dc6613af113605e2595bcb7d1664da.png.webp" alt="image">
+                        <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/de/86/2a/2e8088c879270ccc4b607f599f76733d.png.webp" alt="image">
+                        <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/bb/19/2e/87cab7dae09c6f078639700d8e53a997.png.webp" alt="image">
+                        <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/44/11/eb/4c13b7bafc14dce464a8dbbea66be561.png.webp" alt="image">
+                    </div>
+                    <!-- Buttons Area -->
+                    <div class="buttons-area">
+                        <div class="previous-btn">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                        <div class="next-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <!-- Pagination Area -->
+                    <div class="pagination-area">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        let imagesAreaImages = document.querySelectorAll('.images-area img');
+// Images Area First Image
+let imagesAreaFirstImage = document.querySelector('.images-area .firstImage');
+
+// Previous And Next Buttons
+let previousBtn = document.querySelector('.previous-btn');
+let nextBtn = document.querySelector('.next-btn');
+
+// Pagination Area 
+let paginationArea = document.querySelector('.pagination-area');
+
+// Current Image Count
+let currentImageCount = 1;
+
+// Slider Controler Function
+let sliderController;
+// Create Pagination Spans Function
+let createPaginationSpans;
+
+// Every Click On Buttons
+previousBtn.addEventListener('click', previousImage);
+nextBtn.addEventListener('click', nextImage);
+
+
+// Previous Image Function
+function previousImage() {
+  // If The currentImageCount Is 1
+  if(currentImageCount === 1){
+    return false;
+  }else{ // Else
+    // Minus One From currentImageCount
+    currentImageCount--;
+    // Call Function sliderController();
+    sliderController();
+
+  };
+};
+
+// Next Image Function
+function nextImage() {
+  // If The currentImageCount Is imagesAreaImages.length
+  if(currentImageCount === imagesAreaImages.length){
+    return false;
+  }else{ // Else
+    // Plus One To currentImageCount
+    currentImageCount++;
+    // Call Function sliderController();
+    sliderController();
+  };
+};
+
+// Create Pagination Spans [Circls] Function
+(function createPaginationSpans(){
+  // Loop On All The Images Slider
+  for(var i = 0; i < imagesAreaImages.length; i++){
+    // Create Span 
+    let paginationSpan = document.createElement('span');
+    // Append The Span
+    paginationArea.appendChild(paginationSpan)
+  };
+})();
+
+// Slider Controler Function
+(sliderController = function (){
+  // Get All The pagination Spans
+  let paginationCircls = document.querySelectorAll('.pagination-area span');
+
+  // Call Remore All Active Class Function
+  removeAllActive(paginationCircls);
+  
+  // Call Remore Active Button Function
+  activeButton();
+
+  // The currentImageCount Minus One
+  let currentImageMinusOne = currentImageCount - 1;
+
+  // Set Active Class On Current Pagination
+  paginationCircls[currentImageMinusOne].classList.add('active');
+
+  // Move The images Area First Image
+  imagesAreaFirstImage.style.marginLeft = `-${842 * currentImageMinusOne}px`;
+  console.log(842 * currentImageMinusOne);
+})();
+
+// Remove All Active Class Function
+function removeAllActive(targetElement){
+  for(var i = 0; i < targetElement.length; i++){
+    targetElement[i].classList.remove('active');
+  };
+};
+
+// Check Active Button Function
+function activeButton() {
+  // If The Current Image Count Equle 1
+  currentImageCount === 1 ? 
+  // Hide The Previous Button
+  previousBtn.classList.add('disabled') : 
+  // Else: Show The Previous Button
+  previousBtn.classList.remove('disabled');
+
+  // If The Current Image Count Equle imagesAreaImages.length
+  currentImageCount === imagesAreaImages.length ? 
+  // Hide The Next Button
+  nextBtn.classList.add('disabled') : 
+  // Else: Show The Next Button
+  nextBtn.classList.remove('disabled');
+};
+
+// Move Slider Image Every 3 Second 
+setInterval(() => {
+  // If The Current Image Count Not Equle imagesAreaImages.length
+  if(currentImageCount != imagesAreaImages.length){
+    // Plus One
+    currentImageCount++;
+    // Call Function sliderController();
+    sliderController();
+  }else{ // else
+    // Make currentImageCount Equle 1
+    currentImageCount = 1;
+    // Call Function sliderController();
+    sliderController();
+  };
+}, 3000);
+    </script>
 </body>
 </html>

@@ -438,23 +438,24 @@ button.go-cart{
 
 .main-content {
     width: calc(100% - 255px);
-    height: auto;
+    height: 280px;
     /* background-color: rgb(255, 255, 255); */
     margin-left: auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     border-radius: 8px;
+    display: flex;
 }
 
 .wrapper{
-    width: 842px;
-    height: auto;
+    width: 840px;
+    height: 100%;
     position: relative;
 }
 
   /* Images Area */
 .images-area{
     width: auto;
-    height: auto;
+    height: 100%;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -535,4 +536,12 @@ button.go-cart{
 .pagination-area span.active{
     transform: scale(1);
     opacity: 1;
+}
+
+.square-ad {
+    margin-left: 20px;
+}
+.square-ad img{
+    height: 280px;
+    border-radius: 10px;
 }

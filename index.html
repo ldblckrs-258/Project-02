@@ -114,7 +114,6 @@
             </div>
             <div class="main-content">
                 <div class="wrapper">
-                    <!-- Images Area -->
                     <div class="images-area">
                         <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/48/18/5c/490007591389bfb83e612e8b9be7c885.png.webp" alt="image" class="firstImage">
                         <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/cc/d2/13/d6dc6613af113605e2595bcb7d1664da.png.webp" alt="image">
@@ -122,7 +121,6 @@
                         <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/bb/19/2e/87cab7dae09c6f078639700d8e53a997.png.webp" alt="image">
                         <img src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/44/11/eb/4c13b7bafc14dce464a8dbbea66be561.png.webp" alt="image">
                     </div>
-                    <!-- Buttons Area -->
                     <div class="buttons-area">
                         <div class="previous-btn">
                             <i class="fa-solid fa-chevron-left"></i>
@@ -131,138 +129,16 @@
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
                     </div>
-                    <!-- Pagination Area -->
                     <div class="pagination-area">
                     </div>
+                </div>
+
+                <div class="square-ad">
+                    <img src="https://salt.tikicdn.com/ts/tikimsp/72/5d/12/de208f96317f2df53623a5f1e8571bdd.png" alt="">
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        let imagesAreaImages = document.querySelectorAll('.images-area img');
-// Images Area First Image
-let imagesAreaFirstImage = document.querySelector('.images-area .firstImage');
-
-// Previous And Next Buttons
-let previousBtn = document.querySelector('.previous-btn');
-let nextBtn = document.querySelector('.next-btn');
-
-// Pagination Area 
-let paginationArea = document.querySelector('.pagination-area');
-
-// Current Image Count
-let currentImageCount = 1;
-
-// Slider Controler Function
-let sliderController;
-// Create Pagination Spans Function
-let createPaginationSpans;
-
-// Every Click On Buttons
-previousBtn.addEventListener('click', previousImage);
-nextBtn.addEventListener('click', nextImage);
-
-
-// Previous Image Function
-function previousImage() {
-  // If The currentImageCount Is 1
-  if(currentImageCount === 1){
-    return false;
-  }else{ // Else
-    // Minus One From currentImageCount
-    currentImageCount--;
-    // Call Function sliderController();
-    sliderController();
-
-  };
-};
-
-// Next Image Function
-function nextImage() {
-  // If The currentImageCount Is imagesAreaImages.length
-  if(currentImageCount === imagesAreaImages.length){
-    return false;
-  }else{ // Else
-    // Plus One To currentImageCount
-    currentImageCount++;
-    // Call Function sliderController();
-    sliderController();
-  };
-};
-
-// Create Pagination Spans [Circls] Function
-(function createPaginationSpans(){
-  // Loop On All The Images Slider
-  for(var i = 0; i < imagesAreaImages.length; i++){
-    // Create Span 
-    let paginationSpan = document.createElement('span');
-    // Append The Span
-    paginationArea.appendChild(paginationSpan)
-  };
-})();
-
-// Slider Controler Function
-(sliderController = function (){
-  // Get All The pagination Spans
-  let paginationCircls = document.querySelectorAll('.pagination-area span');
-
-  // Call Remore All Active Class Function
-  removeAllActive(paginationCircls);
-  
-  // Call Remore Active Button Function
-  activeButton();
-
-  // The currentImageCount Minus One
-  let currentImageMinusOne = currentImageCount - 1;
-
-  // Set Active Class On Current Pagination
-  paginationCircls[currentImageMinusOne].classList.add('active');
-
-  // Move The images Area First Image
-  imagesAreaFirstImage.style.marginLeft = `-${842 * currentImageMinusOne}px`;
-  console.log(842 * currentImageMinusOne);
-})();
-
-// Remove All Active Class Function
-function removeAllActive(targetElement){
-  for(var i = 0; i < targetElement.length; i++){
-    targetElement[i].classList.remove('active');
-  };
-};
-
-// Check Active Button Function
-function activeButton() {
-  // If The Current Image Count Equle 1
-  currentImageCount === 1 ? 
-  // Hide The Previous Button
-  previousBtn.classList.add('disabled') : 
-  // Else: Show The Previous Button
-  previousBtn.classList.remove('disabled');
-
-  // If The Current Image Count Equle imagesAreaImages.length
-  currentImageCount === imagesAreaImages.length ? 
-  // Hide The Next Button
-  nextBtn.classList.add('disabled') : 
-  // Else: Show The Next Button
-  nextBtn.classList.remove('disabled');
-};
-
-// Move Slider Image Every 3 Second 
-setInterval(() => {
-  // If The Current Image Count Not Equle imagesAreaImages.length
-  if(currentImageCount != imagesAreaImages.length){
-    // Plus One
-    currentImageCount++;
-    // Call Function sliderController();
-    sliderController();
-  }else{ // else
-    // Make currentImageCount Equle 1
-    currentImageCount = 1;
-    // Call Function sliderController();
-    sliderController();
-  };
-}, 3000);
-    </script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

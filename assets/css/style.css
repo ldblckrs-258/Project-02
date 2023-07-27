@@ -436,14 +436,16 @@ button.go-cart{
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+.ads-banner {
+    width: 100%;
+    height: 280px;
+    display: flex;
+}
+
 .main-content {
     width: calc(100% - 255px);
-    height: 280px;
-    /* background-color: rgb(255, 255, 255); */
+    height: auto;
     margin-left: auto;
-    /* overflow-x: hidden; */
-    border-radius: 8px;
-    display: flex;
 }
 
 .wrapper{
@@ -544,4 +546,12 @@ button.go-cart{
 .square-ad img{
     height: 280px;
     border-radius: 10px;
+}
+
+
+.rcm-collect {
+    width: 100%;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
 }

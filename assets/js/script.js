@@ -45,8 +45,7 @@ function nextImage() {
 	let currentImageMinusOne = currentImageCount - 1;
 
 	paginationCircls[currentImageMinusOne].classList.add('active');
-	imagesAreaFirstImage.style.marginLeft = `-${840 * currentImageMinusOne}px`;
-	console.log(842 * currentImageMinusOne);
+	imagesAreaFirstImage.style.marginLeft = `-${558.28 * currentImageMinusOne}px`;
 })();
 
 function removeAllActive(targetElement) {
@@ -73,3 +72,49 @@ setInterval(() => {
 		sliderController();
 	};
 }, 4000);
+
+
+function CDtimer(options){
+	var box = document.querySelector(options.container);
+	var container = box.querySelector('.countdown-ctn');
+	var listClass = ['days', 'hours', 'minutes', 'seconds', 'cd__number', 'colon'];
+	let j = 0;
+	for (let i=0; i<7; i++){
+		var newspan = document.createElement('span');
+		if (i%2==0) {
+			newspan.classList.add(listClass[4], listClass[j]);
+			j++;
+			newspan.textContent = '00';
+		}
+		else {
+			newspan.classList.add(listClass[5]);
+			newspan.textContent = ':';
+		}
+		container.appendChild(newspan);
+	}
+	container.setAttribute('date-value', options.targetTime);
+}
+function updateCD(boxSN, dateValue) {
+	var box = document.querySelector(boxSN);
+	var container = box.querySelector('.countdown-ctn');
+	var target = new Date(dateValue);
+	target.setHours(target.getHours() - 7);
+	
+	function updateCountdown() {
+		const allspans = container.querySelectorAll('.cd__number');
+		const now = new Date();
+		const timeRemaining = target - now;
+		var newTime = [
+            Math.floor(timeRemaining / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
+            Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0'),
+            Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0'),
+            Math.floor((timeRemaining % (1000 * 60)) / 1000).toString().padStart(2, '0'),
+		];
+		for (let i=0; i<allspans.length; ++i) {                
+			if (allspans[i].textContent != newTime[i]){
+				allspans[i].textContent = newTime[i];
+			}
+		}
+	}
+	setInterval(updateCountdown, 1000);
+}

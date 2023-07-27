@@ -142,12 +142,22 @@
 
                 <div class="rcm-collect">
                     <div class="rcm__headbar">
-                        
+                        <span class="headbar__title">Hot Collection</span>
+                        <div class="countdown-ctn"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function (){
+            CDtimer({
+                container : '.rcm-collect',
+                targetTime : '2023-08-25',
+            })
+        });
+        updateCD('.rcm-collect', '2023-08-25');
+    </script>
 </body>
 </html>

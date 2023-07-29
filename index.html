@@ -140,11 +140,89 @@
                     </div>
                 </div>
 
-                <div class="rcm-collect">
-                    <div class="rcm__headbar">
-                        <span class="headbar__title">Hot Collection</span>
-                        <div class="countdown-ctn"></div>
+                <div class="rcm-collect collection">
+                    <div class="collect__headbar">
+                        <div class="headbar-left">
+                            <span class="left__title">Recommend Collection</span>
+                            <div class="countdown-ctn"></div>
+                        </div>
+                        <div class="headbar-right">
+                            <span class="right__text"> Show more </span>
+                            <i class="fa-solid fa-angles-right"></i>
+                        </div>
                     </div>
+                    <div class="collect__body">
+                        <div class="button-box">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                    </div>
+                </div>
+
+                <div class="hot-collect collection">
+                    <div class="collect__headbar">
+                        <div class="headbar-left">
+                            <span class="left__title">Hot Collection</span>
+                            <div class="countdown-ctn"></div>
+                        </div>
+                        <div class="headbar-right">
+                            <span class="right__text"> Show more </span>
+                            <i class="fa-solid fa-angles-right"></i>
+                        </div>
+                    </div>
+                    <div class="collect__body">
+                        <div class="button-box">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                        <img src="https://salt.tikicdn.com/ts/brickv2og/17/b6/68/8f85b8944c579863f74a1cd8030d90e9.png" alt="" class="body-item">
+                    </div>
+                </div>
+
+                <div class="all-colect collection">
+                    <span class="left__title">All Categories</span>
+                    <div class="all-body">
+                        <div class="all__head">
+                            <div class="a-h-item active">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="item-name">For You</span>
+                            </div>
+                            <div class="a-h-item">
+                                <i class="fa-solid fa-truck-fast"></i>
+                                <span class="item-name">Freeship</span>
+                            </div>
+                            <div class="a-h-item">
+                                <i class="fa-solid fa-gift"></i>
+                                <span class="item-name">Gifts</span>
+                            </div>
+                            <div class="a-h-item">
+                                <i class="fa-solid fa-headphones"></i>
+                                <span class="item-name">Headphones</span>
+                            </div>
+                            <div class="a-h-item">
+                                <i class="fa-solid fa-gamepad"></i>
+                                <span class="item-name">GamePads</span>
+                            </div>
+                            <div class="a-h-item">
+                                <i class="fa-solid fa-mobile"></i>
+                                <span class="item-name">SmartPhone</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="all-list">
                 </div>
             </div>
         </div>
@@ -152,12 +230,11 @@
     <script src="./assets/js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded',function (){
-            CDtimer({
-                container : '.rcm-collect',
-                targetTime : '2023-08-25',
-            })
+            CDtimer('.rcm-collect');
+            CDtimer('.hot-collect');
         });
-        updateCD('.rcm-collect', '2023-08-25');
+        updateCD('.rcm-collect', '2023-07-30');
+        updateCD('.hot-collect', '2023-08-01');
     </script>
 </body>
 </html>

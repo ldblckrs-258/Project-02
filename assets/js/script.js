@@ -127,6 +127,12 @@ for (let i=0; i<ahItems.length; ++i){
 			ahItems[j].classList.remove('active');
 		}
 		ahItems[i].classList.add('active');
+
+		var cValue = ahItems[i].getAttribute("cValue");
+		allList.innerHTML = '';
+		for (let j=0; j<12; j++){
+			insertItem(list_obj[cValue]);
+		}
 	})
 }
 
@@ -255,41 +261,64 @@ var list_obj = [
 		name : 'Apple iPhone 14 Pro Max',
 		star : '4',
 		sold : '3.8K',
-		cost : '9.990.000₫',
+		cost : '9.590.000₫',
 		discount : '-30%',
 		refund : '50',
 		footer : 'Freeship on Sunday'
 	},
 	{    
-		img : 'https://salt.tikicdn.com/cache/280x280/ts/product/a8/c2/45/1bd766dcdd1ae7cb2bdfee8b7f3d8fb7.jpg',
-		check : 'official',
-		name : 'Điện Thoại Xiaomi Redmi Note 12 4GB/128GB - Hàng Chính Hãng',
+		img : 'https://salt.tikicdn.com/cache/280x280/ts/product/45/79/ee/092c84e559c6942309a0dc522f163990.jpg',
+		check : 'certificate',
+		name : 'Set quà sinh nhật tặng bạn gái gồm 5 món',
 		star : '5',
-		sold : '1.8K',
-		cost : '6.990.000₫',
+		sold : '2.4K',
+		cost : '309.000₫',
 		discount : '-10%',
 		refund : '10',
-		footer : 'Freeship on Sunday'
+		footer : 'Freeship on Friday'
+	},
+
+	{    
+		img : 'https://salt.tikicdn.com/cache/280x280/ts/product/5e/6c/bf/5e9005596def395325352a99db343e68.png',
+		check : 'official',
+		name : 'Tai nghe game không dây Bluetooth và Lighspeed Logitech G435 – Hàng chính hãng',
+		star : '5',
+		sold : '2.1K',
+		cost : '1.390.000₫',
+		discount : '-20%',
+		refund : '30',
+		footer : 'Freeship all times'
+	},
+	{    
+		img : 'https://salt.tikicdn.com/cache/280x280/ts/product/8d/70/b6/d3484519d85801fa67d3bc05e0f047cc.png',
+		check : 'official',
+		name : 'Tay Cầm Gamepad Không Dây Rapoo V600S (Type-C) - Hàng Chính Hãng',
+		star : '5',
+		sold : '3.2K',
+		cost : '690.000₫',
+		discount : '-10%',
+		refund : '10',
+		footer : 'Freeship today'
+	},
+	{    
+		img : 'https://salt.tikicdn.com/cache/280x280/ts/product/6a/15/8f/e968f0b91758b3b43fe92cbf96851795.jpg',
+		check : 'official',
+		name : 'Điện thoại Samsung Galaxy Z Fold 5 - Hàng chính hãng',
+		star : '5',
+		sold : '184',
+		cost : '16.390.000₫',
+		discount : '-20%',
+		refund : '50',
+		footer : 'Freeship all tímes'
 	},
 ]
 
 
-
+var allList = document.querySelector('.all-list');
 function insertItem(object){
-	console.log(object);
-	var allList = document.querySelector('.all-list');
 	var newItem = createItem(object);
 	allList.appendChild(newItem);
 }
-list_obj.forEach(element => {
-	insertItem(element);
-});
-list_obj.forEach(element => {
-	insertItem(element);
-});
-list_obj.forEach(element => {
-	insertItem(element);
-});
-list_obj.forEach(element => {
-	insertItem(element);
-});
+for (let i=0; i<12; ++i){
+	insertItem(list_obj[0]);
+}

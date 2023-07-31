@@ -79,7 +79,7 @@ header {
 
 .search-ctn {
     height: 100%;
-    width: 100%;
+    width: 800px;
 }
 
 .search-bar {
@@ -288,6 +288,7 @@ span.item-number {
     width: 100%;
     height: auto;
     margin: 10px 0;
+    overflow: hidden;
 }
 
 .cart-head {
@@ -323,8 +324,11 @@ button.clear-cart{
     justify-content: start;
     align-items: center;
     cursor: pointer;
+    transition: all 1s ease;
 }
-
+.cart-float {
+    transform: translateX(100% + 50px);
+}
 .cart-item img {
     object-fit: cover;
     height: 40px;
@@ -398,7 +402,9 @@ button.go-cart{
 }
 
 .side-bar {
-    position: relative;
+    max-height: 100vh;
+    position: sticky;
+    top: 10px;
     display: flex;
     margin-bottom: 16px;
     padding: 12px 8px;

@@ -1,3 +1,22 @@
+var header = document.querySelector('header'),
+	clearCart = header.querySelector('.clear-cart'),
+	cartList = header.querySelector('.cart-list');
+
+	clearCart.addEventListener("click", function() {
+		let cartItems = cartList.querySelectorAll('.cart-item');
+		for (let i = 0; i < cartItems.length; ++i) {		
+			(function(index) {
+				setTimeout(function() {
+					cartItems[index].style.transform = 'translateX(100%)';
+				}, 100 * index);
+			})(i);
+		}
+		setTimeout(function() {
+			cartList.innerHTML = '';
+		}, 1300);
+	});
+
+
 let imagesAreaImages = document.querySelectorAll('.images-area img'),
 	imagesAreaFirstImage = document.querySelector('.images-area .firstImage'),
 	previousBtn = document.querySelector('.previous-btn'),

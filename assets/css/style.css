@@ -404,7 +404,7 @@ button.go-cart{
 .side-bar {
     max-height: 100vh;
     position: sticky;
-    top: 10px;
+    top: 20px;
     display: flex;
     margin-bottom: 16px;
     padding: 12px 8px;
@@ -568,7 +568,7 @@ button.go-cart{
     margin: 20px 0;
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 2px;
 }
 
 .hot-collect {
@@ -804,4 +804,49 @@ button.go-cart{
 }
 .item__bot .refund {
     color: #7e7e7e;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer div {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.footer > div h4 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: rgb(56, 56, 61);
+    margin-bottom: 12px;
+    margin-top: 0px;
+}
+.footer > div a {
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: rgb(128, 128, 137);
+    text-decoration: none;
+}
+
+.footer > div h4:not(:first-child) {
+    margin-top: 16px;
+}
+
+.footer .part-3 > div {
+    width: 226px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-direction: row;
 }

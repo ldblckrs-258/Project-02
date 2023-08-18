@@ -585,6 +585,16 @@ button.go-cart{
     justify-content: space-between;
     align-items: center;
 }
+.body-list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.collect__body img {
+    margin-right: 18px;
+    transition: 0.3s cubic-bezier(.8,.1,0,1);
+}
 .collect__headbar {
     margin-bottom: 20px;
 }
@@ -652,6 +662,7 @@ button.go-cart{
     justify-content: space-between;
     align-items: center;
     color :rgba(11, 116, 229, 0.4);
+    z-index: 1;
 }
 .button-box i {
     cursor: pointer;
@@ -724,6 +735,7 @@ button.go-cart{
     align-items:center;
     justify-content:space-between;
     flex-direction:column;
+    cursor: pointer;
 }
 
 .list-item img {

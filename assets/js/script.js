@@ -158,7 +158,6 @@ for (let i=0; i<ahItems.length; ++i){
 // CREATE ITEM OF CATEGORIES
 
 function createItem(input) {
-    // Tạo các element và gán các thuộc tính và nội dung tương ứng
     const listItemDiv = document.createElement('div');
     listItemDiv.className = 'list-item';
 
@@ -337,7 +336,41 @@ var allList = document.querySelector('.all-list');
 function insertItem(object){
 	var newItem = createItem(object);
 	allList.appendChild(newItem);
+	newItem.addEventListener('dblclick', function() {
+		var cartList = document.querySelector('.cart-list');
+		const listItem = document.createElement('div');
+    	listItem.className = 'cart-item';
+
+		const iImg = document.createElement('img');
+		iImg.src = object.img;
+		const iName = document.createElement('span');
+		iName.className = 'item-name';
+		iName.innerText = object.name;
+		const iCost = document.createElement('span');
+		iCost.className = 'item-cost';
+		iCost.innerText = object.cost;
+
+		listItem.appendChild(iImg);
+		listItem.appendChild(iName);
+		listItem.appendChild(iCost);
+		cartList.appendChild(listItem);
+
+	})
 }
 for (let i=0; i<12; ++i){
 	insertItem(list_obj[0]);
 }
+
+
+var collections = document.querySelectorAll('.collect__body');
+collections.forEach(cBody => {
+	var left = cBody.querySelector('.fa-circle-chevron-left');
+	var	right = cBody.querySelector('.fa-circle-chevron-right');
+	var firstItem = cBody.querySelector('.body-item');
+	right.addEventListener('click', function(){
+		firstItem.style.marginLeft = `-1125px`
+	})
+	left.addEventListener('click', function(){
+		firstItem.style.marginLeft = `0`
+	})
+});

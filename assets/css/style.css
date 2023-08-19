@@ -862,3 +862,58 @@ button.go-cart{
     gap: 8px;
     flex-direction: row;
 }
+
+.notif-ctn {
+    display: block;
+    position: fixed;
+    right: 10px;
+    top: 40px;
+    height: auto;
+    width: 300px;
+    z-index: 5;
+}
+
+.noti {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    background-color: #fcf0e2;
+    border: 1px solid #bdbdbd;
+    overflow: hidden;
+    transform: translateX(150%);
+    transition: all 0.3s ease;
+    animation: notif-float 3s ease-in-out;
+}
+
+.n-status {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #22A699 ;
+    border-right: 1px solid #bdbdbd;
+}
+
+.n-text {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 10px;
+    font-family: 'Mulish', sans-serif;
+    color: #003833 ;
+}
+
+@keyframes notif-float{
+    0% {
+        transform: translateX(150%);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    80% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(150%);
+    }
+}

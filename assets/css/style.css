@@ -863,57 +863,67 @@ button.go-cart{
     flex-direction: row;
 }
 
-.notif-ctn {
-    display: block;
+
+.toast {
     position: fixed;
+    bottom: 15px;
+    left: 20px;
+    border-radius: 12px;
+    background: #fcfcfc;
+    padding: 15px 20px 15px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid rgb(7, 86, 255);
+}
+
+.toast .toast-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toast-content .iCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    background-color: rgb(7, 86, 255); 
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.toast-content .message {
+    display:flex;
+    flex-direction:column;
+    margin: 0 20px;
+}
+
+.message .text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.message .m-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333333;
+}
+
+.toast .iClose {
+    position: absolute;
+    top: 5px;
     right: 10px;
-    top: 40px;
-    height: auto;
-    width: 300px;
-    z-index: 5;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
 }
 
-.noti {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 50px;
-    background-color: #fcf0e2;
-    border: 1px solid #bdbdbd;
-    overflow: hidden;
-    transform: translateX(150%);
-    transition: all 0.3s ease;
-    animation: notif-float 3s ease-in-out;
-}
-
-.n-status {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    color: #22A699 ;
-    border-right: 1px solid #bdbdbd;
-}
-
-.n-text {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0 10px;
-    font-family: 'Mulish', sans-serif;
-    color: #003833 ;
-}
-
-@keyframes notif-float{
-    0% {
-        transform: translateX(150%);
-    }
-    20% {
-        transform: translateX(0);
-    }
-    80% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(150%);
-    }
+.toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
 }

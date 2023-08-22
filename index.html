@@ -10,7 +10,10 @@
 
 </head>
 <body>
-
+    <button onclick="showToast('Success', 'Thanh cong, success roi !', '#36AE7C', 3000 )"> Success</button>
+    <button onclick="showToast('Warning', 'Can than, Warning roi !', '#F9D923', 5000 )"> Warning</button>
+    <button onclick="showToast('Error', 'Khong dung, Error roi !', '#EB5353', 3000 )"> Error</button>
+    <button onclick="showToast('Something', 'Trong day la mot thong bao !', '#187498', 4000 )"> Information</button>
     <div class="home-page">
         <header>
             <div class="header-container">
@@ -272,7 +275,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="toast">
         <div class="toast-content">
             <i class="fa-solid fa-check iCheck"></i>
@@ -282,7 +285,7 @@
                 <span class="text m-text">The good has been added to your cart</span>
             </div>
         </div>
-        <i class="fa-solid fa-xmark iClose"></i>
+        <i class="fa-solid fa-xmark iClose" onclick="hideToast()"></i>
 
         <div class="progress"></div>
     </div>
@@ -295,6 +298,7 @@
         });
         updateCD('.rcm-collect', '2023-08-30');
         updateCD('.hot-collect', '2023-08-29');
+
     </script>
 </body>
 </html>

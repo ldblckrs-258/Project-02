@@ -374,3 +374,66 @@ collections.forEach(cBody => {
 		firstItem.style.marginLeft = `0`
 	})
 });
+
+// Toast NOTIFICATION
+function delay(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
+        const toast = document.querySelector('.toast');
+        const closeIcon = toast.querySelector('.iClose'),
+            progress = toast.querySelector('.progress');
+        var preTO;
+        
+        async function showToast(title, text, color, time) {
+			clearTimeout(preTO);
+
+			toast.classList.remove('active');
+			await delay(300);
+			progress.classList.remove('active');
+			await delay(200);
+
+
+
+            var iCheck = toast.querySelector('.iCheck'),
+                mTitle = toast.querySelector('.m-title'),
+                mText = toast.querySelector('.m-text');
+
+                iCheck.classList.remove('fa-check');
+                iCheck.classList.remove('fa-exclamation');
+                iCheck.classList.remove('fa-xmark');
+
+            mTitle.innerHTML = title;
+            mText.innerHTML = text;
+            toast.style.setProperty('--pColor', color);
+            toast.style.setProperty('--pTime', time/1000 + 's');
+
+            switch (title) {
+                case 'Success':
+                    iCheck.classList.add('fa-check');
+                    break;
+                case 'Warning':
+                    iCheck.classList.add('fa-exclamation');
+                    break;
+                case 'Error':
+                    iCheck.classList.add('fa-xmark');
+                    break;       
+                default:
+                    iCheck.classList.add('fa-info');
+            }
+
+            if (toast.classList.contains('active')) {
+                hideToast();
+                return;
+            }
+            toast.classList.add('active');
+            progress.classList.add('active');
+            preTO = setTimeout(hideToast, time);
+        }
+        function hideToast() {
+            toast.classList.remove('active');
+            setTimeout(function(){
+                progress.classList.remove('active');
+            }, 600);
+        }

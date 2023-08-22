@@ -865,19 +865,28 @@ button.go-cart{
 
 
 .toast {
+    --pColor : #187498;
+    --pTime : 5;
     position: fixed;
+    min-width: 275px;
     bottom: 15px;
     left: 20px;
     border-radius: 12px;
     background: #fcfcfc;
     padding: 15px 20px 15px 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid rgb(7, 86, 255);
+    border-left: 5px solid var(--pColor);
+    overflow: hidden;
+    transform: translateX(-150%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toast.active {
+    transform: translateX(0);
 }
 
 .toast .toast-content {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .toast-content .iCheck {
@@ -886,7 +895,7 @@ button.go-cart{
     align-items: center;
     height: 35px;
     width: 35px;
-    background-color: rgb(7, 86, 255); 
+    background-color: var(--pColor);
     color: #fff;
     font-size: 20px;
     border-radius: 50%;
@@ -926,4 +935,24 @@ button.go-cart{
     height: 3px;
     width: 100%;
     background: #ddd;
+}
+
+.toast .progress::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--pColor);
+}
+
+.progress.active::before{
+    animation: progress var(--pTime) linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
 }

@@ -414,6 +414,11 @@ button.go-cart{
     width: 230px;
     height: 100%;
     margin-right: 20px;
+    color: #0543a0;
+}
+
+.side-bar:nth-child(2n) {
+    color: #3b1d7d;
 }
 
 .side__title {
@@ -429,10 +434,14 @@ button.go-cart{
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
-.side__item img {
-    object-fit: cover;
-    width: 33.6px;
-    height: 33.6px;
+.side__item i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
+    padding-right: 10px;
 }
 .side__item span {
     margin-left: 10px;

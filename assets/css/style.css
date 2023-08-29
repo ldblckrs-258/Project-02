@@ -835,7 +835,6 @@ button.go-cart{
 
 .footer div {
     display:flex;
-    justify-content:center;
     flex-direction:column;
 }
 
@@ -872,7 +871,64 @@ button.go-cart{
     flex-direction: row;
 }
 
+.part-4 .payments {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
 
+.part-4 .payments i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left : 3px ;    
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+    color : #0543a0;
+}
+
+.part-5 .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.part-5 .socials i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    font-size: 25px;
+}
+
+i.fa-facebook, i.fa-facebook-messenger {
+    color: #1a6ed8;
+}
+i.fa-youtube {
+    color: #ff0000;
+}
+i.fa-twitter {
+    color: #1c96e8;
+}
+
+.part-5 .app {
+    display: flex;
+    flex-direction: row;
+}
+.part-5 .app-store {
+    margin-left: 7px;
+}
+.part-5 .app-store img:first-child {
+    margin-bottom: 7px;
+}
+
+.footer a:hover {
+    color: #0543a0;
+    text-decoration: underline;
+}
 .toast {
     --pColor : #187498;
     --pTime : 5;

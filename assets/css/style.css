@@ -402,28 +402,34 @@ button.go-cart{
 }
 
 .side-bar {
+    height: auto;
     max-height: 100vh;
+    width: 210px;
     position: sticky;
     top: 20px;
     display: flex;
-    margin-bottom: 16px;
-    padding: 12px 8px;
     flex-direction: column;
+    
+    
+
+}
+
+.side-ctn  {
+    margin-bottom: 16px;
     background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    margin: 0 20px 20px 0;
+    padding: 12px 8px;
     border-radius: 8px;
-    width: 230px;
-    height: 100%;
-    margin-right: 20px;
     color: #0543a0;
 }
 
-.side-bar:nth-child(2n) {
-    color: #3b1d7d;
-}
-
 .side__title {
-    margin: 0 0 5px 15px;
+    margin: 5px 0 5px 10px;
     font-weight: 600;
+    color : #000000;
+    font-size: 15px;
 }
 .side__item{
     display: flex;

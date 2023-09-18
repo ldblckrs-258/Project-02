@@ -409,14 +409,12 @@ button.go-cart{
     top: 20px;
     display: flex;
     flex-direction: column;
-    
-    
 
 }
 
 .side-ctn  {
     margin-bottom: 16px;
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     width: 100%;
     height: auto;
     margin: 0 20px 20px 0;
